@@ -62,7 +62,7 @@ body {
   border: 3px solid white;
   cursor: pointer;
   margin: 8vh;
-  z-index: 200;
+  z-index: 10;
 }
 .a {
   width: 7vh;
@@ -121,15 +121,16 @@ body {
 .time {
   width: 100vw;
   position: absolute;
-  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 15vh;
+  z-index: 0;
 }
 .times {
   font-size: 5vh;
   color: white;
+  z-index: 0;
 }
 @media (max-width: 600px) {
   .all {
@@ -189,5 +190,11 @@ body {
     margin-top: 0.3vh;
     height: 1.5vh;
     margin-right: 10px;
+  }
+  .time {
+    height: 7vh;
+  }
+  .times {
+    font-size: 3vh;
   }
 }
