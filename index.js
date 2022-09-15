@@ -63,6 +63,7 @@ document.onkeyup = function (e) {
 };
 
 function caidan() {
+  //菜单
   let a = document.getElementById("candan");
   let b = document.getElementById("minbox");
   if (b.style.display === "none") {
@@ -72,6 +73,7 @@ function caidan() {
   }
 }
 function caidan1() {
+  //未使用
   let a = document.getElementById("candan1");
   let b = document.getElementById("minbox1");
   if (b.style.display === "none") {
@@ -82,9 +84,38 @@ function caidan1() {
 }
 
 function getD1() {
+  //time
   var date = new Date();
   var d1 = date.toLocaleString();
   document.getElementById("times").innerHTML = d1;
 }
-
+//刷新间隔
 setInterval("getD1();", 1000);
+
+//记事本,无法储存
+let shuJu = false;
+function anJian() {
+  let anJian = document.getElementById("anJian");
+  let shiJian = document.getElementById("shiJian");
+
+  if (shuJu) {
+    shuJu = false;
+    anJian.innerText = "保存";
+    shiJian.style.borderBottomColor = "#fff";
+    shiJian.value = "";
+    shiJian.readOnly = false;
+    window.localStorage.removeItem("yes");
+  } else {
+    shuJu = true;
+    anJian.innerText = "删除";
+    shiJian.style.borderBottomColor = "red";
+    shiJian.readOnly = true;
+    window.localStorage.setItem("yes", shiJian.value);
+  }
+}
+
+let data = window.localStorage.getItem("yes");
+if (data) {
+  document.getElementById("shiJian").value = data;
+  anJian();
+}
