@@ -132,6 +132,37 @@ body {
   color: white;
   z-index: 0;
 }
+#shiJian {
+  z-index: 444;
+  width: 30vh;
+  height: 5vh;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid;
+  cursor: pointer;
+  text-align: center;
+  font-size: 3vh;
+  color: rgb(255, 255, 255);
+  outline: none;
+}
+#anJian {
+  color: white;
+  cursor: pointer;
+  font-size: 3vh;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+#kayo {
+  width: 100vw;
+  height: 50vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+input::-webkit-input-placeholder {
+  color: rgba(255, 248, 157, 0.671);
+}
 @media (max-width: 600px) {
   .all {
     width: 5vh;
